@@ -1,0 +1,31 @@
+{
+  "name": "mypage",
+  "version": "1.0.0",
+  "description": "My personal page",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/huy9903098/MyPage.git"
+  },
+  "keywords": [
+    "react"
+  ],
+  "author": "Huy Truong",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/huy9903098/MyPage/issues"
+  },
+  "homepage": "https://github.com/huy9903098/MyPage#readme",
+  "devDependencies": {
+    "concurrently": "^4.1.0",
+    "nodemon": "^1.18.11"
+  },
+  "dependencies": {
+    "cookie-parser": "^1.4.4",
+    "express": "^4.16.4",
+    "pg": "^7.9.0"
+  }
+}
