@@ -25,12 +25,12 @@ const opts = {
 };
 const strategy = new JwtStrategy(opts, (payload, next) => {
     // TODO GET USER FROM DB
-    client.query('SELECT * FROM public.user WHERE user_id = $1;', [payload.id], (errors, user) => {
-        if (errors) {
-            return done(errors, false);
+    db.query('SELECT * FROM public.authuser WHERE email = $1 ;', [payload.email], (err, user) => {
+        if (err.length == 'undefined') {
+            res.status(404).json(err);
         }
-        if (user.rows.length > 0) {
-            return next(null, user.rows[0]);
+        if (user.length > 0) {
+            return next(null, user[0]);
         }
         return next(null, false);
     });

@@ -48,6 +48,13 @@ router.post('/register', (req, res) => {
     });
 });
 
+router.get('/current', passport.authenticate('jwt', { session: false }), (req, res) => {
+    res.json({
+        email: req.user.email,
+    });
+});
+
+
 
 router.post('/login', (req, res) => {
     db.query('SELECT * FROM public.authuser WHERE email = $1 ;', [req.body.email], (err, user) => {
